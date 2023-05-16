@@ -162,7 +162,7 @@ def fusion(img1_path, img2_path='', img_save=''):
 
         # print(data_fusion.shape)
         img = TwoPercentLinear(data_fusion)
-        img = cv.resize(img, (256, 256))
+        # img = cv.resize(img, (256, 256))
         img_road = os.path.join(img_save, img1_name[i] + '.png')
         cv.imwrite(img_road, img)
 
