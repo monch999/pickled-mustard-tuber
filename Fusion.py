@@ -170,7 +170,7 @@ def fusion(img1_path, img2_path='', img_save=''):
 if __name__ == '__main__':
     start = time.time()
     fusion(img1_path=r'data/ms_843',  # MS images
-           img2_path=r'data/HD',  # HD images
+           img2_path=r'data/hd',  # hd images
            img_save=r'data/fusion')  # save fusion images
     end = time.time()
     print('run:%.2fs' % (end - start))
