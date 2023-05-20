@@ -1,7 +1,7 @@
 # -*- coding = utf-8 -*-
 # @Time : 2021/10/13 9:24
 # @Author : 自在清风
-# @File : 图像识别运行程序.py
+# @File : run.py
 # @software: PyCharm
 import glob
 import os
@@ -189,7 +189,7 @@ class UNetTrainer(object):
 
     def validate_(self, data_loader, epoch):
         """
-        验证
+        validation
         :param data_loader: Validation Data
         :param epoch: Learning frequency
         :return:
@@ -218,7 +218,7 @@ class UNetTrainer(object):
 
     def print_metrics(self, metrics, phase, time, epoch=-1):
         """
-        保存指标
+        Save metrics
         :param metrics: Loss value and correct ratio
         :param phase: Data types, divided into validation and training types
         :param time: Time taken to save data once

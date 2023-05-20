@@ -26,3 +26,5 @@ Automatic detection of cortical fibers on pickled mustard tuber using Multispect
 'detected_result' ---- predicted results
 
 'Evaluation_result' ---- evaluation results
+
+'Paper_figure' ---- Paper Illustrations
