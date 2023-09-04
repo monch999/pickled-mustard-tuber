@@ -39,16 +39,16 @@ def Evaluation(truth_path, predict_path, save):
                     total_markup = t_mask.sum() + p_mask.sum()
         Dice = 2 * total_intersect / total_markup
         Recall = total_intersect / (t_mask.sum())
-        Precision = total_intersect / (p_mask.sum())
-        tmp = [Recall, Precision, Dice]
+        Precision = total_intersect / (p_mask.sum() + 0.0001)
+        tmp = [name, Recall, Precision, Dice]
         output.append(tmp)
 
     f = pd.DataFrame(output)
-    f.to_csv(save, header=['R', 'P', 'Dice'], float_format='%.4f')
+    f.to_csv(save, header=['name', 'R', 'P', 'Dice'], float_format='%.4f')
 
 
 if __name__ == '__main__':
-    path = ['fusion', 'ms', 'hd']
+    path = ['fusion', 'hd', 'ms', 'unetpp', 'unet3p']
     truth = r'data/test/test_mask/*.png'  # truth label file path
     predict = r'data/detected_result/**/*.png'  # predict result file path
     save_path = r'data/Evaluation_result/**_evaluation.csv'  # evaluation result file path

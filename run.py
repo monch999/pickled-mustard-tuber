@@ -12,14 +12,14 @@ import cv2
 import numpy as np
 import torch
 from torch import nn
-import torch.nn.functional as F
 from torch.autograd import Variable
-from torch.nn import CrossEntropyLoss, DataParallel
+from torch.nn import DataParallel
 from torch.utils.data import DataLoader
-from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
+from tqdm import tqdm
+
 from dataset import UNetDataset
-from unet4p import Unet4P
+from model import Unet4P, UnetPP, Unet3P
 
 
 class FocalLoss(nn.Module):
@@ -237,7 +237,7 @@ class UNetTester(object):
     """test data"""
 
     def __init__(self, model_path, target_path, color_dim=3, num_classes=2, img_mod=0):
-        self.net = Unet4P(color_dim=color_dim)
+        self.net = Unet3P(color_dim=color_dim)
         checkpoint = torch.load(model_path)
         self.target_dir = target_path
         self.color_dim = color_dim
@@ -297,6 +297,6 @@ if __name__ == '__main__':
         crack_segment = UNetTrainer(save_dir='model', color_dim=3)
         crack_segment.train(train_data, validate_data)
     else:
-        crack_testNet = UNetTester(model_path=r'model_4P/hd.pth',
-                                   target_path=r'data/detected_result/hd', img_mod=1)
-        crack_testNet.test(testImage_dir=r'data/test/test_hd_image')
+        crack_testNet = UNetTester(model_path=r'model/unet3P177.pth',
+                                   target_path=r'data/detected_result/unet3p', img_mod=1)
+        crack_testNet.test(testImage_dir=r'data/test/test_fusion_image')
