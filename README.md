@@ -13,6 +13,7 @@ Automatic detection of cortical fibers on pickled mustard tuber using Multispect
 ## folder
 'model' is trained model file.
 'data' is a data folder,includes:
+
 'HD'---- HD images
 
 'ms_843' ---- MS imgaes use bands8, 4, 3 as false-color images
@@ -27,4 +28,5 @@ Automatic detection of cortical fibers on pickled mustard tuber using Multispect
 
 'Evaluation_result' ---- evaluation results
 
+*********************************************
 'Paper_figure' ---- Paper Illustrations
