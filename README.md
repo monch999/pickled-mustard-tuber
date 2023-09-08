@@ -3,7 +3,7 @@ Automatic detection of cortical fibers on pickled mustard tuber using Multispect
 ## programs
 'run.py' is a program that trains or tests model.
 
-'unet4p.py' is a model program.
+'model.py' is a model program.
 
 'dataset.py' is a data loading program.
 
