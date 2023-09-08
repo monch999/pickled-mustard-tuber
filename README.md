@@ -11,7 +11,7 @@ Automatic detection of cortical fibers on pickled mustard tuber using Multispect
 
 'Evaluation.py' is a program that evaluats predicted results with recall, precision, dice, and outputs a related csv file in 'data/Evaluation_result'.
 ## folder
-'model_4P' is trained model file.
+'model' is trained model file.
 'data' is a data folder,includes:
 'HD'---- HD images
 
